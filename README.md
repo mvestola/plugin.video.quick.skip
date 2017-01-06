@@ -1,6 +1,6 @@
 # QuickSkip for Kodi 
 
-<img src="resources/icon.png" alt="QuickSkip logo"/>
+<img src="icon.png" alt="QuickSkip logo"/>
 
 ## Introduction
 
