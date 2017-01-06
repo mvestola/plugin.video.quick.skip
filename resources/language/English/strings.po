@@ -1,0 +1,50 @@
+# XBMC Media Center language file
+# Addon Name: QuickSkip
+# Addon id: script.quick.skip
+# Addon Provider: Mikko Vestola
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC-Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: 2015-09-29 07:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+msgctxt "Addon Summary"
+msgid "TODO"
+msgstr ""
+
+msgctxt "Addon Description"
+msgid "TODO"
+msgstr ""
+
+msgctxt "Addon Disclaimer"
+msgid "TODO"
+msgstr ""
+
+
+msgctxt "#32100"
+msgid "Dialog display settings"
+msgstr ""
+
+msgctxt "#32101"
+msgid "Auto close dialog in seconds after inactivity"
+msgstr ""
+
+msgctxt "#32102"
+msgid "First skip step in seconds"
+msgstr ""
+
+msgctxt "#32103"
+msgid "Second skip step in seconds"
+msgstr ""
+
+msgctxt "#32104"
+msgid "Third skip step in seconds"
+msgstr ""

@@ -5,6 +5,8 @@ from threading import Timer
 
 # To launch this script, add the file "kodi-quick-skip-keymap.xml" to your kodi user defined keymaps: ~/.kodi/userdata/keymaps/
 
+addon = xbmcaddon.Addon()
+
 # See key codes from https://github.com/xbmc/xbmc/blob/master/xbmc/input/Key.h
 ACTION_MOVE_LEFT =  1
 ACTION_MOVE_RIGHT = 2
@@ -22,15 +24,17 @@ xbfont_truncated = 0x00000008
 SKIP_LEFT = "left"
 SKIP_RIGHT = "right"
 
-AUTO_CLOSE_TIMEOUT_SECONDS = 4
+AUTO_CLOSE_TIMEOUT_SECONDS = int(addon.getSetting("auto_close_timeout"))
+FIRST_SKIP_SECONDS = int(addon.getSetting("first_skip_seconds"))
+SECOND_SKIP_SECONDS = int(addon.getSetting("second_skip_seconds"))
+THIRD_SKIP_SECONDS = int(addon.getSetting("third_skip_seconds"))
 
-addon = xbmcaddon.Addon()
 timeout = None
 
 class QuickSkipDialog(xbmcgui.WindowDialog):
 
     def __init__(self):
-        self.skipSeconds = 180.0
+        self.skipSeconds = float(FIRST_SKIP_SECONDS)
         self.cumulativeSkipSeconds = 0.0
         self.startTime = None
         self.previousDirection = None
@@ -40,7 +44,7 @@ class QuickSkipDialog(xbmcgui.WindowDialog):
 
         self.controlLabel1 = xbmcgui.ControlLabel(x=20, y=20, width=180, height=30, label="", alignment=xbfont_center_y|xbfont_center_x)
         self.addControl(self.controlLabel1)
-        self.controlLabel1.setLabel("Jump: 180 sec")
+        self.controlLabel1.setLabel("Jump: " + str(FIRST_SKIP_SECONDS) + " sec")
 
         self.controlLabel2 = xbmcgui.ControlLabel(x=20, y=60, width=180, height=30, label="", alignment=xbfont_center_y|xbfont_center_x)
         self.addControl(self.controlLabel2)
@@ -64,14 +68,14 @@ class QuickSkipDialog(xbmcgui.WindowDialog):
             self.closeDialogByUserInput()
         elif action_id == ACTION_SELECT_ITEM or action_id == ACTION_MOVE_UP:
             if not self.directionChanged:
-                if int(self.skipSeconds) == 180:
+                if int(self.skipSeconds) == FIRST_SKIP_SECONDS:
                     self.restartTimeoutTimer()
-                    self.skipSeconds = 60.0
-                    self.controlLabel1.setLabel("Jump: " + str(int(self.skipSeconds)) + " sec")
-                elif int(self.skipSeconds) == 60:
+                    self.skipSeconds = float(SECOND_SKIP_SECONDS)
+                    self.controlLabel1.setLabel("Jump: " + str(SECOND_SKIP_SECONDS) + " sec")
+                elif int(self.skipSeconds) == SECOND_SKIP_SECONDS:
                     self.restartTimeoutTimer()
-                    self.skipSeconds = 10.0
-                    self.controlLabel1.setLabel("Jump: " + str(int(self.skipSeconds)) + " sec")
+                    self.skipSeconds = float(THIRD_SKIP_SECONDS)
+                    self.controlLabel1.setLabel("Jump: " + str(THIRD_SKIP_SECONDS) + " sec")
                 else:
                     self.closeDialogByUserInput()
             else:

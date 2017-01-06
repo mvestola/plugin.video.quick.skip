@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+    <category label="32100">
+        <setting label="32101" type="slider" id="auto_close_timeout" default="4" range="1,1,10" option="int" />
+        <setting type="sep"/>
+        <setting label="32102" type="slider" id="first_skip_seconds" default="180" range="1,1,300" option="int" />
+        <setting label="32103" type="slider" id="second_skip_seconds" default="60" range="1,1,300" option="int" />
+        <setting label="32104" type="slider" id="third_skip_seconds" default="10" range="1,1,300" option="int" />
+    </category>
+</settings>
