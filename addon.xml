@@ -9,11 +9,11 @@
 	<extension point="xbmc.addon.metadata">
 		<platform>all</platform>
 		<summary lang="en">Fast binary skipping</summary>
-		<description lang="en">Example Script to show hello world</description>
-		<description lang="fi">TODO</description>
+		<summary lang="fi">Nopea puolitushaku</summary>
+		<description lang="en">Quickly skip commercials</description>
+		<description lang="fi">Hyppää nopeasti mainosten yli</description>
 		<license>MIT License</license>
-		<language></language>
-		<forum>http://forum.kodi.tv/showthread.php?tid=209948</forum>
+		<language>en fi</language>
 		<source>https://github.com/mvestola/plugin.video.quick.skip</source>
 		<website>http://mvestola.github.io/plugin.video.quick.skip/</website>
 		<email>quick.skip@mvnet.fi</email>
