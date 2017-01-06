@@ -2,10 +2,10 @@
 <keymap>
     <fullscreenvideo>
         <keyboard>
-            <up>RunAddon(script.quick.skip)</up>
+            <up>RunAddon(plugin.video.quick.skip)</up>
         </keyboard>
         <remote>
-            <up>RunAddon(script.quick.skip)</up>
+            <up>RunAddon(plugin.video.quick.skip)</up>
         </remote>
     </fullscreenvideo>
 </keymap>

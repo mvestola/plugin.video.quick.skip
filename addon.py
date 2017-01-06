@@ -3,7 +3,7 @@ import xbmcgui
 import xbmc
 from threading import Timer
 
-# To launch this script, add the file "kodi-quick-skip-keymap.xml" to your kodi user defined keymaps: ~/.kodi/userdata/keymaps/
+# To launch this script, add the file "/resources/data/quick-skip-keymap.xml" to your kodi user defined keymaps: ~/.kodi/userdata/keymaps/
 
 addon = xbmcaddon.Addon()
 
@@ -46,7 +46,7 @@ class QuickSkipDialog(xbmcgui.WindowDialog):
         self.previousDirection = None
         self.directionChanged = False
 
-        self.addControl(xbmcgui.ControlImage(10, 10, 200, 90, addon.getAddonInfo('path')+'/resources/background.png'))
+        self.addControl(xbmcgui.ControlImage(10, 10, 200, 90, addon.getAddonInfo('path')+'/resources/media/background.png'))
 
         self.controlLabel1 = xbmcgui.ControlLabel(x=20, y=20, width=180, height=30, label="", alignment=xbfont_center_y|xbfont_center_x)
         self.addControl(self.controlLabel1)
@@ -141,3 +141,5 @@ if xbmc.Player().isPlayingVideo():
     timeout.start()
     dialog.doModal()
     del dialog
+else:
+    xbmcgui.Dialog().ok(addon.getLocalizedString(32301), addon.getLocalizedString(32302))
