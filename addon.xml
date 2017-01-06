@@ -18,7 +18,7 @@
 		<website>http://mvestola.github.io/plugin.video.quick.skip/</website>
 		<email>quick.skip@mvnet.fi</email>
 		<assets>
-			<icon>resources/icon.png</icon>
+			<icon>icon.png</icon>
 		</assets>
 		<news>v0.1.0  (2017-01-05)
 			- Initial release</news>
