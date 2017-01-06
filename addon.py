@@ -1,22 +1,17 @@
 import xbmcaddon
 import xbmcgui
 import xbmc
+from threading import Timer
 
-# Add following XML to userdata/keymaps/quick-skip.xml
-# <?xml version="1.0" encoding="UTF-8"?>
-# <keymap>
-#   <global>
-#     <keyboard>
-#       <space>RunAddon(script.quick.skip)</space>
-#     </keyboard>
-#   </global>
-# </keymap>
+# To launch this script, add the file "kodi-quick-skip-keymap.xml" to your kodi user defined keymaps: ~/.kodi/userdata/keymaps/
 
 # See key codes from https://github.com/xbmc/xbmc/blob/master/xbmc/input/Key.h
 ACTION_MOVE_LEFT =  1
 ACTION_MOVE_RIGHT = 2
+ACTION_MOVE_UP = 3
 ACTION_SELECT_ITEM = 7
 ACTION_PREVIOUS_MENU = 10
+ACTION_NAV_BACK = 92
 
 xbfont_left = 0x00000000
 xbfont_right = 0x00000001
@@ -27,7 +22,10 @@ xbfont_truncated = 0x00000008
 SKIP_LEFT = "left"
 SKIP_RIGHT = "right"
 
+AUTO_CLOSE_TIMEOUT_SECONDS = 4
+
 addon = xbmcaddon.Addon()
+timeout = None
 
 class QuickSkipDialog(xbmcgui.WindowDialog):
 
@@ -38,41 +36,57 @@ class QuickSkipDialog(xbmcgui.WindowDialog):
         self.previousDirection = None
         self.directionChanged = False
 
-        self.addControl(xbmcgui.ControlImage(10, 10, 200, 140, addon.getAddonInfo('path')+'/resources/background.png'))
+        self.addControl(xbmcgui.ControlImage(10, 10, 200, 90, addon.getAddonInfo('path')+'/resources/background.png'))
 
-        self.controlLabel1 = xbmcgui.ControlLabel(x=20, y=20, width=180, height=60, label="", alignment=xbfont_center_y|xbfont_center_x)
+        self.controlLabel1 = xbmcgui.ControlLabel(x=20, y=20, width=180, height=30, label="", alignment=xbfont_center_y|xbfont_center_x)
         self.addControl(self.controlLabel1)
         self.controlLabel1.setLabel("Jump: 180 sec")
 
-        self.controlLabel2 = xbmcgui.ControlLabel(x=20, y=80, width=180, height=60, label="", alignment=xbfont_center_y|xbfont_center_x)
+        self.controlLabel2 = xbmcgui.ControlLabel(x=20, y=60, width=180, height=30, label="", alignment=xbfont_center_y|xbfont_center_x)
         self.addControl(self.controlLabel2)
-        self.controlLabel2.setLabel("Place: 00:00")
+        self.controlLabel2.setLabel("Place: 00:00:00")
 
+    def restartTimeoutTimer(self):
+        global timeout
+        timeout.cancel()
+        timeout = Timer(AUTO_CLOSE_TIMEOUT_SECONDS, self.close)
+        timeout.start()
+
+    def closeDialogByUserInput(self):
+        global timeout
+        timeout.cancel()
+        del timeout
+        self.close()
 
     def onAction(self, action):
-        if action == ACTION_PREVIOUS_MENU:
-            self.close()
-        elif action == ACTION_SELECT_ITEM:
+        action_id = action.getId()
+        if action_id == ACTION_PREVIOUS_MENU or action_id == ACTION_NAV_BACK:
+            self.closeDialogByUserInput()
+        elif action_id == ACTION_SELECT_ITEM or action_id == ACTION_MOVE_UP:
             if not self.directionChanged:
                 if int(self.skipSeconds) == 180:
+                    self.restartTimeoutTimer()
                     self.skipSeconds = 60.0
                     self.controlLabel1.setLabel("Jump: " + str(int(self.skipSeconds)) + " sec")
                 elif int(self.skipSeconds) == 60:
+                    self.restartTimeoutTimer()
                     self.skipSeconds = 10.0
                     self.controlLabel1.setLabel("Jump: " + str(int(self.skipSeconds)) + " sec")
                 else:
-                    self.close()
+                    self.closeDialogByUserInput()
             else:
-                self.close()
-        elif action == ACTION_MOVE_LEFT:
+                self.closeDialogByUserInput()
+        elif action_id == ACTION_MOVE_LEFT:
             self.handleSkip(SKIP_LEFT)
-        elif action == ACTION_MOVE_RIGHT:
+        elif action_id == ACTION_MOVE_RIGHT:
             self.handleSkip(SKIP_RIGHT)
         else:
             pass
 
 
     def handleSkip(self, direction):
+        self.restartTimeoutTimer()
+
         if self.previousDirection is not None and self.previousDirection != direction:
             self.directionChanged = True
 
@@ -113,5 +127,7 @@ class QuickSkipDialog(xbmcgui.WindowDialog):
 
 if xbmc.Player().isPlayingVideo():
     dialog = QuickSkipDialog()
+    timeout = Timer(AUTO_CLOSE_TIMEOUT_SECONDS, dialog.close)
+    timeout.start()
     dialog.doModal()
     del dialog
