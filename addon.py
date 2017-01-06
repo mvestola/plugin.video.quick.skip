@@ -52,7 +52,7 @@ class QuickSkipDialog(xbmcgui.WindowDialog):
 
         self.controlLabel2 = xbmcgui.ControlLabel(x=20, y=60, width=180, height=30, label="", alignment=xbfont_center_y|xbfont_center_x)
         self.addControl(self.controlLabel2)
-        self.controlLabel2.setLabel(i18n_place + ": 00:00:00")
+        self.controlLabel2.setLabel(i18n_place + ": +00:00:00")
 
     def restartTimeoutTimer(self):
         global timeout
@@ -68,9 +68,7 @@ class QuickSkipDialog(xbmcgui.WindowDialog):
 
     def onAction(self, action):
         action_id = action.getId()
-        if action_id == ACTION_PREVIOUS_MENU or action_id == ACTION_NAV_BACK:
-            self.closeDialogByUserInput()
-        elif action_id == ACTION_SELECT_ITEM or action_id == ACTION_MOVE_UP:
+        if action_id == ACTION_SELECT_ITEM or action_id == ACTION_MOVE_UP:
             if not self.directionChanged:
                 if int(self.skipSeconds) == FIRST_SKIP_SECONDS:
                     self.restartTimeoutTimer()
@@ -89,7 +87,7 @@ class QuickSkipDialog(xbmcgui.WindowDialog):
         elif action_id == ACTION_MOVE_RIGHT:
             self.handleSkip(SKIP_RIGHT)
         else:
-            pass
+            self.closeDialogByUserInput()
 
 
     def handleSkip(self, direction):
@@ -121,6 +119,8 @@ class QuickSkipDialog(xbmcgui.WindowDialog):
 
         if self.cumulativeSkipSeconds < 0.0:
             formatted_place = "-" + formatted_place
+        else:
+            formatted_place = "+" + formatted_place
 
         self.controlLabel1.setLabel(i18n_jump + ": " + str(int(self.skipSeconds)) + " " + i18n_sec)
         self.controlLabel2.setLabel(i18n_place + ": " + formatted_place)
