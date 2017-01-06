@@ -91,3 +91,5 @@ ENV/
 # IDEA project files
 .idea
 *.iml
+
+.directory
