@@ -29,6 +29,10 @@ FIRST_SKIP_SECONDS = int(addon.getSetting("first_skip_seconds"))
 SECOND_SKIP_SECONDS = int(addon.getSetting("second_skip_seconds"))
 THIRD_SKIP_SECONDS = int(addon.getSetting("third_skip_seconds"))
 
+i18n_jump = addon.getLocalizedString(32201)
+i18n_place = addon.getLocalizedString(32202)
+i18n_sec = addon.getLocalizedString(32203)
+
 timeout = None
 
 class QuickSkipDialog(xbmcgui.WindowDialog):
@@ -44,11 +48,11 @@ class QuickSkipDialog(xbmcgui.WindowDialog):
 
         self.controlLabel1 = xbmcgui.ControlLabel(x=20, y=20, width=180, height=30, label="", alignment=xbfont_center_y|xbfont_center_x)
         self.addControl(self.controlLabel1)
-        self.controlLabel1.setLabel("Jump: " + str(FIRST_SKIP_SECONDS) + " sec")
+        self.controlLabel1.setLabel(i18n_jump + ": " + str(FIRST_SKIP_SECONDS) + " " + i18n_sec)
 
         self.controlLabel2 = xbmcgui.ControlLabel(x=20, y=60, width=180, height=30, label="", alignment=xbfont_center_y|xbfont_center_x)
         self.addControl(self.controlLabel2)
-        self.controlLabel2.setLabel("Place: 00:00:00")
+        self.controlLabel2.setLabel(i18n_place + ": 00:00:00")
 
     def restartTimeoutTimer(self):
         global timeout
@@ -71,11 +75,11 @@ class QuickSkipDialog(xbmcgui.WindowDialog):
                 if int(self.skipSeconds) == FIRST_SKIP_SECONDS:
                     self.restartTimeoutTimer()
                     self.skipSeconds = float(SECOND_SKIP_SECONDS)
-                    self.controlLabel1.setLabel("Jump: " + str(SECOND_SKIP_SECONDS) + " sec")
+                    self.controlLabel1.setLabel(i18n_jump + ": " + str(SECOND_SKIP_SECONDS) + " " + i18n_sec)
                 elif int(self.skipSeconds) == SECOND_SKIP_SECONDS:
                     self.restartTimeoutTimer()
                     self.skipSeconds = float(THIRD_SKIP_SECONDS)
-                    self.controlLabel1.setLabel("Jump: " + str(THIRD_SKIP_SECONDS) + " sec")
+                    self.controlLabel1.setLabel(i18n_jump + ": " + str(THIRD_SKIP_SECONDS) + " " + i18n_sec)
                 else:
                     self.closeDialogByUserInput()
             else:
@@ -118,8 +122,8 @@ class QuickSkipDialog(xbmcgui.WindowDialog):
         if self.cumulativeSkipSeconds < 0.0:
             formatted_place = "-" + formatted_place
 
-        self.controlLabel1.setLabel("Jump: " + str(int(self.skipSeconds)) + " sec")
-        self.controlLabel2.setLabel("Place: " + formatted_place + " sec")
+        self.controlLabel1.setLabel(i18n_jump + ": " + str(int(self.skipSeconds)) + " " + i18n_sec)
+        self.controlLabel2.setLabel(i18n_place + ": " + formatted_place)
 
         place_to_seek = self.startTime + self.cumulativeSkipSeconds
 

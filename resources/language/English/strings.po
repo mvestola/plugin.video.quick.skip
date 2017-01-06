@@ -48,3 +48,15 @@ msgstr ""
 msgctxt "#32104"
 msgid "Third skip step in seconds"
 msgstr ""
+
+msgctxt "#32201"
+msgid "Jump"
+msgstr ""
+
+msgctxt "#32202"
+msgid "Place"
+msgstr ""
+
+msgctxt "#32203"
+msgid "sec"
+msgstr ""
