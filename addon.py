@@ -11,9 +11,11 @@ addon = xbmcaddon.Addon()
 ACTION_MOVE_LEFT =  1
 ACTION_MOVE_RIGHT = 2
 ACTION_MOVE_UP = 3
+ACTION_PAGE_UP =  5
 ACTION_SELECT_ITEM = 7
 ACTION_PREVIOUS_MENU = 10
 ACTION_NAV_BACK = 92
+ACTION_CHANNEL_UP = 184
 
 xbfont_left = 0x00000000
 xbfont_right = 0x00000001
@@ -68,7 +70,7 @@ class QuickSkipDialog(xbmcgui.WindowDialog):
 
     def onAction(self, action):
         action_id = action.getId()
-        if action_id == ACTION_SELECT_ITEM or action_id == ACTION_MOVE_UP:
+        if action_id == ACTION_SELECT_ITEM or action_id == ACTION_MOVE_UP or action_id == ACTION_PAGE_UP or action_id == ACTION_CHANNEL_UP:
             if not self.directionChanged:
                 if int(self.skipSeconds) == FIRST_SKIP_SECONDS:
                     self.restartTimeoutTimer()
