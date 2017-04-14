@@ -4,9 +4,9 @@
 
 ## Introduction
 
-This addon for Kodi (former XBMC) allows you to fast skip commercials with a few button presses. All you need to to is to press the up arrow and then click right/left. Similar functionality was provided in Topfield PVR set top boxes as an TAP addon (SkipIt).
+This addon for Kodi (former XBMC) allows you to fast skip commercials in TV show recordings with a few button presses. The main idea is to skip the recording forward in 180 seconds steps as long as the TV show appears. After that, you can skip backward/forward using binary search to find the exact position where the commercials end and the TV show continues. All you need to do is to press the `up` key during video playback and then press `right` or `left` keys. Similar functionality was provided in Topfield PVR set top boxes as an TAP addon named [Skip It](http://www.saunalahti.fi/tsalomak/skipit.html).
 
-Typical usage is this:
+Typical usage scenario is this:
 1. You are playing a recorded TV show and commercials are starting. You want to skip to place where the commercials have ended and the TV show continues.
 1. Press `up` key to show the add-on dialog.
 1. Press `right` to skip 180 seconds forward.
@@ -29,10 +29,6 @@ This add-on has been tested in LibreELEC 7.0.3 with Kodi version 16.1. Also Libr
    1. Use [Keymap editor add-on](http://kodi.wiki/view/Add-on:Keymap_Editor) to configure the key. Select `Programs...Keymap Editor...Edit...Fullscreen Video...Add-ons...Launch QuickSkip` and Input the `up` key. Finally save Keymap Editor settings.
    1. Make SSH to kodi and create user defined keymap file to `~/.kodi/userdata/keymaps/quick-skip-keymap.xml` with contents same as in file [/resources/data/quick-skip-keymap.xml](/resources/data/quick-skip-keymap.xml). Reboot Kodi.
 
-You can change some settings for the add-on in the add-on settings page in Kodi. Values that can be changed are:
-* Time in seconds to auto close the dialog
-* First, second and third skip values in seconds which default to 180 / 60 / 10 seconds. These are the skip seconds that change when you press the `OK` key when add-on dialog is visible.
-
 ## Usage in Kodi
 
 1. Open some video file and play it in fullscreen mode
@@ -40,6 +36,10 @@ You can change some settings for the add-on in the add-on settings page in Kodi.
 1. Use `left` and `right` arrow keys from your keyboard or remote control to skip to direction you want
 1. You can press `OK` key to change the time to skip from 180 sec -> 60 sec -> 10 sec.
 1. Close the dialog with `Esc` from your keyboard or `back` from your remote control. Or just wait for a few seconds and the dialog will automatically close.
+
+You can change some settings for the add-on in the add-on settings page in Kodi. Values that can be changed are:
+* Time in seconds to auto close the dialog
+* First, second and third skip values in seconds which default to 180 / 60 / 10 seconds. These are the skip seconds that change when you press the `OK` key when add-on dialog is visible.
 
 ## Screenshots
 
