@@ -20,12 +20,14 @@ Usage might sound complicated at first but it is very powerful, intuitive and fa
 
 ## Installation to Kodi
 
+This add-on has been tested in LibreELEC 7.0.3 with Kodi version 16.1. Also LibreELEC 8.0.1 with Kodi version 17.1 seems to work but is not yet tested well.
+
 1. Download this repository as [zip file](https://github.com/mvestola/plugin.video.quick.skip/archive/master.zip).
 1. Copy the zip file to the computer you are running Kodi.
 1. Install the plugin from the zip file using the Kodi addon manager
 1. Define the key that will launch the add-on. You have two options to do this:
    1. Use [Keymap editor add-on](http://kodi.wiki/view/Add-on:Keymap_Editor) to configure the key. Select `Programs...Keymap Editor...Edit...Fullscreen Video...Add-ons...Launch QuickSkip` and Input the `up` key. Finally save Keymap Editor settings.
-   1. Make SSH to kodi and create user defined keymap file to `~/.kodi/userdata/keymaps/quick-skip-keymap.xml` with contents same as in file [/resources/data/quick-skip-keymap.xml](/resources/data/quick-skip-keymap.xml).
+   1. Make SSH to kodi and create user defined keymap file to `~/.kodi/userdata/keymaps/quick-skip-keymap.xml` with contents same as in file [/resources/data/quick-skip-keymap.xml](/resources/data/quick-skip-keymap.xml). Reboot Kodi.
 
 ## Usage in Kodi
 
@@ -34,3 +36,9 @@ Usage might sound complicated at first but it is very powerful, intuitive and fa
 1. Use `left` and `right` arrow keys from your keyboard or remote control to skip to direction you want
 1. You can press `OK` key to change the time to skip from 180 sec -> 60 sec -> 10 sec.
 1. Close the dialog with `Esc` from your keyboard or `back` from your remote control. Or just wait for a few seconds and the dialog will automatically close.
+
+## Contact
+
+You can contact the developer by email: quick.skip@mvnet.fi
+
+For reporting bugs, use the GitHub issue tracker.
