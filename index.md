@@ -1,6 +1,5 @@
 ---
 title: QuickSkip for Kodi
-tagline: Quickly skip commercials in TV show recordings when using Kodi
 description: QuickSkip is an add-on for Kodi (former XBMC) which allows you to fast skip commercials in TV show recordings with a few button presses.
 ---
 
