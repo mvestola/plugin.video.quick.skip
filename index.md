@@ -1,6 +1,6 @@
 # QuickSkip for Kodi 
 
-<img src="../icon.png" alt="QuickSkip logo"/>
+<img src="icon.png" alt="QuickSkip logo"/>
 
 ## Introduction
 
@@ -43,9 +43,9 @@ You can change some settings for the add-on in the add-on settings page in Kodi.
 
 ## Screenshots
 
-<img src="../resources/screenshots/screenshot-01.jpg" alt="Add-on view with logo" />
-<img src="../resources/screenshots/screenshot-02.jpg" alt="Add-on settings" />
-<img src="../resources/screenshots/screenshot-03.jpg" alt="Add-on dialog when playing video" />
+<img src="resources/screenshots/screenshot-01.jpg" alt="Add-on view with logo" />
+<img src="resources/screenshots/screenshot-02.jpg" alt="Add-on settings" />
+<img src="resources/screenshots/screenshot-03.jpg" alt="Add-on dialog when playing video" />
 
 ## Contact
 
