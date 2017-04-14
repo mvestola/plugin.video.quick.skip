@@ -43,9 +43,9 @@ You can change some settings for the add-on in the add-on settings page in Kodi.
 
 ## Screenshots
 
-<img src="resources/screenshots/screenshot-01.png" alt="Add-on view with logo" width="600" />
-<img src="resources/screenshots/screenshot-02.png" alt="Add-on settings" width="600" />
-<img src="resources/screenshots/screenshot-03.png" alt="Add-on dialog when playing video" width="600" />
+<img src="resources/screenshots/screenshot-01.jpg" alt="Add-on view with logo" />
+<img src="resources/screenshots/screenshot-02.jpg" alt="Add-on settings" />
+<img src="resources/screenshots/screenshot-03.jpg" alt="Add-on dialog when playing video" />
 
 ## Contact
 
