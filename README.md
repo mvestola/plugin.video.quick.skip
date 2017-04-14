@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This addon for Kodi (former XBMC) allows you to fast skip commercials in TV show recordings with a few button presses. The main idea is to skip the recording forward in 180 seconds steps as long as the TV show appears. After that, you can skip backward/forward using binary search to find the exact position where the commercials end and the TV show continues. All you need to do is to press the `up` key during video playback and then press `right` or `left` keys. Similar functionality was provided in Topfield PVR set top boxes as an TAP addon named [Skip It](http://www.saunalahti.fi/tsalomak/skipit.html).
+This addon for Kodi (former XBMC) allows you to fast skip commercials in TV show recordings with a few button presses. The main idea is to skip the recording forward in 180 or 60 second steps as long as you see that the TV show is running again. After that, you can skip backward or forward to find the exact position where the commercials end and the TV show continues. All you need to do is to press the `up` key during video playback and then press `right` or `left` keys to find the position where the commercials end. Similar functionality was provided in Topfield PVR set top boxes as an TAP addon named [Skip It](http://www.saunalahti.fi/tsalomak/skipit.html).
 
 Typical usage scenario is this:
 1. You are playing a recorded TV show and commercials are starting. You want to skip to place where the commercials have ended and the TV show continues.
