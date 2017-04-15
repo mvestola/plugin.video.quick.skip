@@ -47,6 +47,11 @@ You can change some settings for the add-on in the add-on settings page in Kodi.
 <img src="resources/screenshots/screenshot-02.jpg" alt="Add-on settings" />
 <img src="resources/screenshots/screenshot-03.jpg" alt="Add-on dialog when playing video" />
 
+## Changelog
+
+### 1.0.0 (2017-04-15)
+* First stable release
+
 ## Contact
 
 You can contact the developer by email: quick.skip@mvnet.fi
