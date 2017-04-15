@@ -20,7 +20,9 @@ Usage might sound complicated at first but it is very powerful, intuitive and fa
 
 ## Installation to Kodi
 
-This add-on has been tested in LibreELEC 7.0.3 with Kodi version 16.1. Also LibreELEC 8.0.1 with Kodi version 17.1 seems to work but is not yet tested well.
+This add-on has been tested to work well at least in LibreELEC 7.0.3 with Kodi version 16.1. There seems to be some problems in 
+LibreELEC 8.0.1 with Kodi version 17.1. The add-on seems to work most of the time with Kodi 17.1 but the dialog does not always auto close for some reason.
+Also skipping seems to be a little bit slower with Kodi 17.1 than in 16.1.
 
 1. Download this repository as [zip file](https://github.com/mvestola/plugin.video.quick.skip/archive/master.zip).
 1. Copy the zip file to the computer you are running Kodi.
