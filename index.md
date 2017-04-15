@@ -9,7 +9,7 @@ description: QuickSkip is an add-on for Kodi (former XBMC) which allows you to f
 
 ## Introduction
 
-This add-on for Kodi (former XBMC) allows you to fast skip commercials in TV show recordings with a few button presses. The main idea is to skip the recording forward in 180 or 60 second steps as long as you see that the TV show is running again. After that, you can skip backward or forward to find the exact position where the commercials end and the TV show continues. All you need to do is to press the `up` key during video playback and then press `right` or `left` keys to find the position where the commercials end. Similar functionality was provided in Topfield PVR set top boxes as an TAP add-on named [Skip It](http://www.saunalahti.fi/tsalomak/skipit.html).
+This add-on for Kodi (former XBMC) allows you to fast skip commercials in TV show recordings with a few button presses. The main idea is to skip the recording forward in 180 or 60 second steps as long as you see that the TV show is running again. After that, you can skip backward or forward to find the exact position where the commercials end and the TV show continues. All you need to do is to press the `up` key during video playback and then press `right` or `left` keys to find the position where the commercials end. Similar functionality was provided in Topfield PVR set-top boxes as an TAP add-on named [Skip It](http://www.saunalahti.fi/tsalomak/skipit.html).
 
 Typical usage scenario is this:
 1. You are playing a recorded TV show and commercials are starting. You want to skip to place where the commercials have ended and the TV show continues.
@@ -23,11 +23,13 @@ Typical usage scenario is this:
 
 Usage might sound complicated at first but it is very powerful, intuitive and fast way to skip commercials. You can skip commercials in just a few seconds by pressing `right` and `left` keys to the direction where the commercial break is ending and TV show continues.
 
-## Installation to Kodi
+## Supported Kodi versions
 
 This add-on has been tested to work well at least in LibreELEC 7.0.3 with Kodi version 16.1. There seems to be some problems in 
 LibreELEC 8.0.1 with Kodi version 17.1. The add-on seems to work most of the time with Kodi 17.1 but the dialog does not always auto close for some reason.
 Also skipping seems to be a little bit slower with Kodi 17.1 than in 16.1.
+
+## Installation to Kodi
 
 1. Download this repository as [zip file](https://github.com/mvestola/plugin.video.quick.skip/archive/master.zip).
 1. Copy the zip file to the computer you are running Kodi.
