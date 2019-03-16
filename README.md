@@ -20,9 +20,9 @@ Usage might sound complicated at first but it is very powerful, intuitive and fa
 
 ## Supported Kodi versions
 
-This add-on has been tested to work well at least in LibreELEC 7.0.3 with Kodi version 16.1. There seems to be some problems in 
-LibreELEC 8.0.1 with Kodi version 17.1. The add-on seems to work most of the time with Kodi 17.1 but the dialog does not always auto close for some reason.
-Also skipping seems to be a little bit slower with Kodi 17.1 than in 16.1.
+This add-on has been tested to work well at least in following setups:
+* LibreELEC 9.0.1 with Kodi version 18.1
+* LibreELEC 7.0.3 with Kodi version 16.1
 
 ## Installation to Kodi
 
